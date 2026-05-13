@@ -21,3 +21,17 @@ double pop() {
     }
     return stack[top--];
 }
+
+void printTop() {
+    if (top < 0) {
+        printf("Error: Stack is empty\n");
+    } else {
+        printf("Result: %.2lf\n", stack[top]);
+    }
+}
+
+int main() {
+    printf("Reverse Polish Calculator Started.\n");
+    // Friend's code will go here
+    return 0;
+}
