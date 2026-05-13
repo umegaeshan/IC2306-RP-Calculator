@@ -21,3 +21,11 @@ double pop() {
     }
     return stack[top--];
 }
+
+void printTop() {
+    if (top < 0) {
+        printf("Error: Stack is empty\n");
+    } else {
+        printf("Result: %.2lf\n", stack[top]);
+    }
+}
