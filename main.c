@@ -29,3 +29,9 @@ void printTop() {
         printf("Result: %.2lf\n", stack[top]);
     }
 }
+
+int main() {
+    printf("Reverse Polish Calculator Started.\n");
+    // Friend's code will go here
+    return 0;
+}
