@@ -44,6 +44,16 @@ int main() {
                 scanf("%lf", &inputValue);
                 push(inputValue);
                 break;
+            case '+':
+                operand2 = pop();
+                operand1 = pop();
+                push(operand1 + operand2);
+                break;
+            case '-':
+                operand2 = pop();
+                operand1 = pop();
+                push(operand1 - operand2);
+                break;
     }
     return 0;
 }
