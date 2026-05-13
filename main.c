@@ -54,6 +54,17 @@ int main() {
                 operand1 = pop();
                 push(operand1 - operand2);
                 break;
+            case '*':
+                operand2 = pop();
+                operand1 = pop();
+                push(operand1 * operand2);
+                break;
+            case '/':
+                operand2 = pop();
+                operand1 = pop();
+                if (operand2 != 0) { push(operand1 / operand2); } 
+                else { printf("Error: Division by zero\n"); push(operand1); push(operand2); }
+                break;
     }
     return 0;
 }
