@@ -32,6 +32,45 @@ void printTop() {
 
 int main() {
     printf("Reverse Polish Calculator Started.\n");
-    // Friend's code will go here
+    char instruction;
+    double operand1, operand2, inputValue;
+    printf("Instructions: '?' to input, '+', '-', '*', '/' for operations, '=' to print.\n");
+    printf("Type 'q' to quit.\n\n");
+    while (1) {
+        scanf(" %c", &instruction);
+        if (instruction == 'q' || instruction == 'Q') { break; }
+        switch (instruction) {
+            case '?':
+                scanf("%lf", &inputValue);
+                push(inputValue);
+                break;
+            case '+':
+                operand2 = pop();
+                operand1 = pop();
+                push(operand1 + operand2);
+                break;
+            case '-':
+                operand2 = pop();
+                operand1 = pop();
+                push(operand1 - operand2);
+                break;
+            case '*':
+                operand2 = pop();
+                operand1 = pop();
+                push(operand1 * operand2);
+                break;
+            case '/':
+                operand2 = pop();
+                operand1 = pop();
+                if (operand2 != 0) { push(operand1 / operand2); } 
+                else { printf("Error: Division by zero\n"); push(operand1); push(operand2); }
+                break;
+            case '=':
+                printTop();
+                break;
+            default:
+                printf("Invalid instruction: %c\n", instruction);
+        }
+    }
     return 0;
 }
