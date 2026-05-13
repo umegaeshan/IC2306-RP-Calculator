@@ -13,3 +13,11 @@ void push(double val) {
     }
     stack[++top] = val;
 }
+
+double pop() {
+    if (top < 0) {
+        printf("Error: Stack Underflow\n");
+        return 0.0;
+    }
+    return stack[top--];
+}
