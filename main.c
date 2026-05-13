@@ -65,6 +65,12 @@ int main() {
                 if (operand2 != 0) { push(operand1 / operand2); } 
                 else { printf("Error: Division by zero\n"); push(operand1); push(operand2); }
                 break;
+            case '=':
+                printTop();
+                break;
+            default:
+                printf("Invalid instruction: %c\n", instruction);
+        }
     }
     return 0;
 }
