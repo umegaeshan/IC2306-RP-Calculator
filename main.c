@@ -39,7 +39,11 @@ int main() {
     while (1) {
         scanf(" %c", &instruction);
         if (instruction == 'q' || instruction == 'Q') { break; }
-        // Switch case
+        switch (instruction) {
+            case '?':
+                scanf("%lf", &inputValue);
+                push(inputValue);
+                break;
     }
     return 0;
 }
